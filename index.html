@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal UAS Gais</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #444;
+        }
+
+        h1, h2, p {
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ff6f91;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #a64ac9;
+        }
+
+        main {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .filter input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 1rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section.schedule {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        section.schedule:hover {
+            transform: scale(1.02);
+        }
+
+        section.schedule h2 {
+            font-size: 1.8rem;
+            color: #ff6f91;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        th {
+            background-color: #ffe3e3;
+            color: #a64ac9;
+        }
+
+        tbody tr {
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fce4ec;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8bbd0;
+        }
+
+        tbody tr:hover {
+            background-color: #ff80ab;
+            color: white;
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: #ff6f91;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        main, header, footer {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jadwal Ujian Akhir Semester</h1>
+        <p>Fiskal 24 - Sisfor 24 💕</p>
+    </header>
+    <main>
+        <!-- Filter Input -->
+        <div class="filter">
+            <input type="text" id="searchInput" placeholder="Cari jadwal (misal: nama mata kuliah, ruangan, dll.)">
+        </div>
+
+        <section class="schedule">
+            <h2>Anyaa Piskal</h2>
+            <table id="kelasSayaTable">
+                <thead>
+                    <tr>
+                        <th>Mata Kuliah</th>
+                        <th>Ruangan</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pengantar Perpajakan</td>
+                        <td>G-202, G-201</td>
+                        <td>Senin, 9 Des 2024</td>
+                        <td>08.00-10.00</td>
+                    </tr>
+                    <tr>
+                        <td>Kebijakan dan Tata Kelola</td>
+                        <td>G-402</td>
+                        <td>Selasa, 10 Des 2024</td>
+                        <td>10.30-12.30</td>
+                    </tr>
+                    <tr>
+                        <td>Pengantar Hukum Pajak</td>
+                        <td>G-401</td>
+                        <td>Selasa, 10 Des 2024</td>
+                        <td>13.30-15.30</td>
+                    </tr>
+                    <tr>
+                        <td>Dasar-dasar Ilmu Administrasi</td>
+                        <td>G-303</td>
+                        <td>Kamis, 12 Des 2024</td>
+                        <td>10.30-12.30</td>
+                    </tr>
+                    <tr>
+                        <td>MPK Agama</td>
+                        <td>M-102</td>
+                        <td>Jumat, 14 Des 2024</td>
+                        <td>08.00-10.00</td>
+                    </tr>
+                    <tr>
+                        <td>Dasar-dasar Akuntansi 1</td>
+                        <td>G-205</td>
+                        <td>Jumat, 17 Des 2024</td>
+                        <td>13.30-15.30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="schedule">
+            <h2>Rehan Pacil</h2>
+            <table id="kelasPacarTable">
+                <thead>
+                    <tr>
+                        <th>Mata Kuliah</th>
+                        <th>Ruangan</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kalkulus 1</td>
+                        <td>A2.09-5</td>
+                        <td>Kamis, 12 Des 2024</td>
+                        <td>09.00-11.30</td>
+                    </tr>
+                    <tr>
+                        <td>Manajemen Bisnis</td>
+                        <td>A6.09-7</td>
+                        <td>Jumat, 13 Des 2024</td>
+                        <td>13.30-16.00</td>
+                    </tr>
+                    <tr>
+                        <td>MPK Agama</td>
+                        <td>A2.06-1</td>
+                        <td>Selasa, 17 Des 2024</td>
+                        <td>09.00-11.30</td>
+                    </tr>
+                    <tr>
+                        <td>Dasar-dasar Pemrograman 1</td>
+                        <td>A1.04-7</td>
+                        <td>Rabu, 18 Des 2024</td>
+                        <td>09.00-11.30</td>
+                    </tr>
+                    <tr>
+                        <td>Matematika Diskrit 1</td>
+                        <td>A2.06-5</td>
+                        <td>Jumat, 20 Des 2024</td>
+                        <td>08.30-11.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Bismillah A semua. Semangat buat kita huhu💖</p>
+    </footer>
+
+    <script>
+        // Filter function
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keyup', () => {
+            const filter = searchInput.value.toLowerCase();
+            const tables = document.querySelectorAll('table');
+
+            tables.forEach(table => {
+                const rows = table.querySelectorAll
+                const rows = table.querySelectorAll('tbody tr');
+                rows.forEach(row => {
+                    const text = row.innerText.toLowerCase();
+                    row.style.display = text.includes(filter) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
